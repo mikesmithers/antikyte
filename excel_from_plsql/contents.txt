@@ -1,0 +1,5 @@
+This directory contains the following :
+
+as_xlsx.sql - a file copied from https://technology.amis.nl/wp-content/uploads/2021/03/as_xlsx20.txt
+salary_by_dept_rpt.pks - a package header for a report generating an xlsx file using the AS_XLSX package
+salary_by_dept_rpt.pkb - the package body
