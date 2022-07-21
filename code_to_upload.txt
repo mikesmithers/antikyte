@@ -1,0 +1,35 @@
+Blog code upload
+Initialising SQL*Plus variables with NEW_VALUE
+Turtles all the way
+Wordle
+Anydata ( 3 laws)
+Defaulting Argument Values in a Bash Script
+Filewatcher ?
+Shellscript from pl/sql
+GZIP PL/SQL
+GPG
+External table to read a file
+Create schema
+utPLSQL 3.0
+Post-Truth PL/SQL
+Fine-Grained Auditing
+Datapump Stats Import
+SQLD - User Defined Context Menus
+List files from a directory (PL) SQL
+SQLDeveloper Extensions
+Datapump
+tkprof
+password complexity (abba)
+HTML5
+German Footballers
+Windows batch from scheduler
+Nested Tables
+External tables - holidays
+Copa America
+Dating tips
+zenity
+lotto
+Postcode
+Quiz machine
+REGEXP_REPLACE
+isnumber
