@@ -18,7 +18,6 @@ as
         type typ_teams is table of c_standings%rowtype index by pls_integer;
         v_teams typ_teams;
     begin
-        skippy.log('I_GROUP : '||i_group);
         -- see if the group is now completed - i.e. all the teams have played all of their matches in the group
         open c_standings;
         fetch c_standings bulk collect into v_teams;
@@ -28,7 +27,6 @@ as
             return;
         end if;    
         
-        skippy.log('Updating DRAW');       
         update draw
         set team_cid = 
             case 
@@ -38,8 +36,7 @@ as
         where cid in(v_teams(1).draw_cid, v_teams(2).draw_cid)
         and stage_cid = 'R16'
         and group_cid = i_group;
-        
-        skippy.log('Updating FIXTURES');
+
         update fixtures fix
         set t1_cid = 
             case 
@@ -58,7 +55,6 @@ as
             or
             fix.t2_draw_cid in (v_teams(1).draw_cid, v_teams(2).draw_cid))
         and fix.stage_cid = 'R16';
-        skippy.log('Completed');
     end update_r16_draw;    
         
     procedure validate_override( i_group in groups.cid%type)
@@ -143,4 +139,3 @@ as
 
 end maintain_draw;
 /
-        

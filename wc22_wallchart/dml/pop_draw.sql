@@ -43,6 +43,12 @@ begin
     ins('WINNER_SF_1', v_stage);
     ins('WINNER_SF_2', v_stage);
 
+    -- Add DRAW_CIDs for the teams qualifying from the group stage
+    -- add the winner_draw_cid and second_draw_cid values
+    update groups
+    set winner_draw_cid = 'WINNER_'||cid,
+        second_draw_cid = 'SECOND_'||cid;
+    commit;
 end;
 /
 
