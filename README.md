@@ -1,2 +1,28 @@
 # Antikyte
-This is just somewhere to store code that I've written/referenced in the blog.
+This Repo contains code that I've written/referenced in [the blog](https://mikesmithers.wordpress.com).
+
+The contents are :
+
+- dbms_scheduler_background_job - a template script for running a background scheduler job in Oracle. Original Post : [Running a background job in PL/SQL](https://wp.me/pweWl-2ak)
+  
+- excel_from_plsql - code used in exploring Anton Scheffer's AS_XLSX package.
+  Original Post : [Generating an Excel Report from PL/SQL using AS_XLSX](https://wp.me/pweWl-2p3)  
+
+- file_compare_linux - bash script to compare two files.
+  Original Post : [Linux – Checking that two files contain the same data but in a different order – Sorted!](https://wp.me/pweWl-2uJ)
+
+- forall_dml - test scripts to compare the performance of forall against other array processing methods in Oracle. Orignal Post : [FORALL DML - why context isn't everything](https://wp.me/pweWl-2yY)
+
+- journal_trigger_generator - PL/SQL package to generate journal triggers for and canonicalize inserts into reference data tables.
+  Original Post : [Generating Journal Triggers with help from DBMS_UTILITY](https://wp.me/pweWl-2w5)
+
+- nurdle - fun and games with SQL pattern matching and Ref Cursors on the theme of Wordle.
+Original Post : [The most productive code I'll write this year](https://wp.me/pweWl-2jF)  
+
+- public_holidays_schedule - code to create a DBMS_SCHEDULER schedule which accounts for UK Bank Holidays.
+Original Post : [
+Excluding English Public Holidays from a DBMS_SCHEDULER Schedule](https://wp.me/pweWl-2tR)
+  
+- wc22_wallchart - scripts to create and populate the application referenced in : [Building a Master-Detail Drill-Down with Apex](https://wp.me/pweWl-2wy)
+
+ 
