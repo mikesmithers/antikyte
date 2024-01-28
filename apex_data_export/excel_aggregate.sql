@@ -54,7 +54,7 @@ begin
             count( 1) over() as record_count 
          from departments';
 
-    -- Create a column group that contains only the data columns to display on the report, not the record_count
+    -- Make sure only the data columns to display on the report, not the record_count
     -- NOTE - in all of these procs, column names need to be passed as upper case literals
     apex_data_export.add_column( p_columns => v_columns, p_name => 'DEPARTMENT_ID');
     apex_data_export.add_column( p_columns => v_columns, p_name => 'DEPARTMENT_NAME');
