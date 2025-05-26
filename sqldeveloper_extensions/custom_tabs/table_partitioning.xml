@@ -1,0 +1,34 @@
+<items>
+    <item type="editor" node="TableNode" vertical="true">
+        <title><![CDATA[Partitioning]]></title>
+        <query>
+            <sql>
+                <![CDATA[
+                    select 
+                        'Partitioning' as label,
+                        pt.partitioning_type, 
+                        listagg(kcol.column_name, ', ') within group ( order by kcol.column_position) as partition_key
+                    from all_part_tables pt
+                    inner join all_part_key_columns kcol
+                        on kcol.owner = pt.owner
+                        and kcol.name = pt.table_name
+                    where pt.owner = :OBJECT_OWNER
+                    and pt.table_name = :OBJECT_NAME
+                    group by pt.partitioning_type
+                    union all
+                    select 
+                        'Subpartitioning' as label,
+                        pt.subpartitioning_type, 
+                        listagg(kcol.column_name, ', ') within group ( order by kcol.column_position) as subpartition_key
+                    from all_part_tables pt
+                    inner join all_subpart_key_columns kcol
+                        on kcol.owner = pt.owner
+                        and kcol.name = pt.table_name
+                    where pt.owner = :OBJECT_OWNER
+                    and pt.table_name = :OBJECT_NAME
+                    group by pt.subpartitioning_type
+                ]]>
+            </sql>
+        </query>
+    </item>
+</items>

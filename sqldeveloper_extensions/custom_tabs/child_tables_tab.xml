@@ -1,0 +1,25 @@
+<items>
+    <item type="editor" node="TableNode" vertical="true">
+        <title><![CDATA[Dependent Tables]]></title>
+        <query>
+            <sql>
+                <![CDATA[
+                    select 
+                        child.owner, 
+                        'SQLDEV:LINK:'||child.owner||':TABLE:'||child.table_name||':oracle.dbtools.raptor.controls.grid.DefaultDrillLink' as child_table,
+                        listagg( cols.column_name, ', ') within group ( order by cols.position) as column_list
+                    from all_constraints child
+                    inner join all_constraints par
+                        on child.r_owner = par.owner
+                        and child.r_constraint_name = par.constraint_name
+                    inner join all_cons_columns cols
+                        on child.owner = cols.owner
+                        and child.constraint_name = cols.constraint_name
+                    where par.owner = :OBJECT_OWNER
+                    and par.table_name = :OBJECT_NAME 
+                    group by child.owner, child.table_name
+                ]]>
+            </sql>
+        </query>
+    </item>
+</items>

@@ -1,0 +1,10 @@
+<items>
+    <item type="editor" node="TableNode" vertical="true">
+        <title><![CDATA[Enter the Tab Name Here]]></title>
+        <query>
+            <sql>
+                <![CDATA[Enter your query here]]>
+            </sql>
+        </query>
+    </item>
+</items>
