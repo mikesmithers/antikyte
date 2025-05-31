@@ -1,32 +1,44 @@
 <items>
     <item type="editor" node="TableNode" vertical="true">
-        <title><![CDATA[Partitioning]]></title>
+        <title><![CDATA[Partition Keys]]></title>
         <query>
             <sql>
                 <![CDATA[
+                    with part_cols as
+                    (
+                        select 
+                            owner,
+                            name,
+                            listagg(column_name, ', ') within group ( order by column_position) as partition_key_cols
+                        from all_part_key_columns
+                        group by owner, name
+                    ),
+                    subpart_cols as
+                    (
+                        select 
+                            owner,
+                            name,
+                            listagg(column_name, ', ') within group ( order by column_position) as subpartition_key_cols
+                        from all_subpart_key_columns
+                        group by owner, name
+                    )
                     select 
-                        'Partitioning' as label,
-                        pt.partitioning_type, 
-                        listagg(kcol.column_name, ', ') within group ( order by kcol.column_position) as partition_key
-                    from all_part_tables pt
-                    inner join all_part_key_columns kcol
-                        on kcol.owner = pt.owner
-                        and kcol.name = pt.table_name
-                    where pt.owner = :OBJECT_OWNER
-                    and pt.table_name = :OBJECT_NAME
-                    group by pt.partitioning_type
-                    union all
-                    select 
-                        'Subpartitioning' as label,
-                        pt.subpartitioning_type, 
-                        listagg(kcol.column_name, ', ') within group ( order by kcol.column_position) as subpartition_key
-                    from all_part_tables pt
-                    inner join all_subpart_key_columns kcol
-                        on kcol.owner = pt.owner
-                        and kcol.name = pt.table_name
-                    where pt.owner = :OBJECT_OWNER
-                    and pt.table_name = :OBJECT_NAME
-                    group by pt.subpartitioning_type
+                        tab.owner, 
+                        tab.table_name, 
+                        tab.partitioning_type, 
+                        part.partition_key_cols,
+                        tab.subpartitioning_type,
+                        sp.subpartition_key_cols
+                    from all_part_tables tab
+                    inner join part_cols part    
+                        on part.owner = tab.owner 
+                        and part.name = tab.table_name 
+                    left outer join subpart_cols sp 
+                        on sp.owner = tab.owner 
+                        and sp.name = tab.table_name
+                    where tab.owner = :OBJECT_OWNER
+                    and table_name = :OBJECT_NAME
+                    order by 1,2
                 ]]>
             </sql>
         </query>
