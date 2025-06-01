@@ -31,6 +31,6 @@ Original Post : [Cut-and-Paste-Driven-Development - Using utPLSQL to build a tes
 - apex_data_export - Examples of calling the APEX_DATA_EXPORT package directly from PL/SQL to generate formatted output files (mainly XLSX).
 Original Post : [Using the APEX_DATA_EXPORT package directly from PL/SQL](https://wp.me/pweWl-2JB)
 
- -sqldeveloper_extensions - Code for custom SQLDeveloper Classic Extensions
+- sqldeveloper_extensions - Code for custom SQLDeveloper Classic Extensions
  Original Post : [User Defined Extensions in SQLDeveloper Classic - something you can't do in VSCode (yet)](https://wp.me/pweWl-6pW)
 
