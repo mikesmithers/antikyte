@@ -34,3 +34,6 @@ Original Post : [Using the APEX_DATA_EXPORT package directly from PL/SQL](https:
 - sqldeveloper_extensions - Code for custom SQLDeveloper Classic Extensions
  Original Post : [User Defined Extensions in SQLDeveloper Classic - something you can't do in VSCode (yet)](https://wp.me/pweWl-6pW)
 
+ - read_file_external_tables - create an external table to read os files. Suitable for logfiles etc. 
+ Original Post : [Oracle External Tables and really really long lines](https://wp.me/pweWl-6rd)
+
