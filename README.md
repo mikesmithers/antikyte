@@ -37,3 +37,5 @@ Original Post : [Using the APEX_DATA_EXPORT package directly from PL/SQL](https:
  - read_file_external_tables - create an external table to read os files. Suitable for logfiles etc. 
  Original Post : [Oracle External Tables and really really long lines](https://wp.me/pweWl-6rd)
 
+- filewatcher_run_details - see which files have been detected by the dbms_scheduler filewatchers in the database.
+Original Post : [Freddie Starr Ate My File ! Finding out exactly what the Oracle Filewatcher is up to](https://wp.me/pweWl-2Mg)
