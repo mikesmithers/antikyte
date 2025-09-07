@@ -39,3 +39,6 @@ Original Post : [Using the APEX_DATA_EXPORT package directly from PL/SQL](https:
 
 - filewatcher_run_details - see which files have been detected by the dbms_scheduler filewatchers in the database.
 Original Post : [Freddie Starr Ate My File ! Finding out exactly what the Oracle Filewatcher is up to](https://wp.me/pweWl-2Mg)
+
+-dbms_output_get_lines - example of capturing dbms_output statements in variables for use in utPLSQL unit tests.
+Original Post : [Using DBMS_OUTPUT in utPLSQL tests for procedures that don't perform DML](https://wp.me/pweWl-6sb)
