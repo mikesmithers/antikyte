@@ -42,3 +42,6 @@ Original Post : [Freddie Starr Ate My File ! Finding out exactly what the Oracle
 
 -dbms_output_get_lines - example of capturing dbms_output statements in variables for use in utPLSQL unit tests.
 Original Post : [Using DBMS_OUTPUT in utPLSQL tests for procedures that don't perform DML](https://wp.me/pweWl-6sb)
+
+-linux_password_synch - synching the password of a Linux account across multiple servers using expect and secret-tool
+Original Post : [Linux Expectation Management - scripting password changes using expect and secret-tool](https://wp.me/pweWl-6tZ)

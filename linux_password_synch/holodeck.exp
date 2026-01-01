@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+
+set timeout 1
+set prompt "\$"
+
+set holoDecker [lindex $argv 0]
+spawn bash holodeck.sh
+expect "Enter User's Name :"
+send "$holoDecker\r"
+expect $prompt
