@@ -48,3 +48,6 @@ Original Post : [Linux Expectation Management - scripting password changes using
 
 - python_to_oracle_connection - connect to an Oracle database from Python using the cx-Oracle or python-oracledb packages
 Original Post : [The Hitchhiker's Guide to connecting to Oracle from Python](https://wp.me/pweWl-6v2)
+
+- oracle_to_excel_via_python - generate a multi-worksheet Excel workbook from data extracted from Oracle via Pandas DataFrames
+Original Post : [Getting Data from Oracle into Excel using Python and Pandas](https://wp.me/pweWl-6xm)
